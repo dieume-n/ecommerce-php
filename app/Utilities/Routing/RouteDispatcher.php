@@ -20,6 +20,7 @@ class RouteDispatcher
         if (!$this->match) {
             header($_SERVER['SERVER_PROTOCOL'] . '404 Not Found');
             view('errors/404');
+            exit;
         }
         list($controller, $method) = explode('@', $this->match['target']);
         $this->controller = $this->namespace . $controller;
@@ -29,8 +30,6 @@ class RouteDispatcher
             throw new Exception("class {$this->controller} does not exist");
         }
         if (!method_exists(new $this->controller, $this->method)) {
-            echo "<pre>";
-            debug_print_backtrace();
             throw new Exception("method: {$this->method} does not exist in class {$this->controller}");
         }
         // if (!is_callable([new $this->controller, $this->method])) {

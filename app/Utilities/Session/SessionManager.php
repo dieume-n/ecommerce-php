@@ -2,6 +2,8 @@
 
 namespace App\Utilities\Session;
 
+use Dotenv\Dotenv;
+
 class SessionManager
 {
     /**

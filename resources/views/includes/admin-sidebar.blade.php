@@ -51,6 +51,12 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="/admin" class="nav-link">
+                <i class="nav-icon fas fa-money-bill-alt"></i>
+                <p>Payments</p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="/auth/logout" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>Logout</p>

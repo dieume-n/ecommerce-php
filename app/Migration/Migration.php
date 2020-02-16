@@ -2,6 +2,7 @@
 
 namespace App\Migration;
 
+use App\Migration\Tables\Category;
 use App\Migration\Tables\User;
 
 class Migration
@@ -14,6 +15,7 @@ class Migration
     public function up()
     {
         (new User)->up();
+        (new Category)->up();
     }
 
     /**
@@ -24,5 +26,6 @@ class Migration
     public function down()
     {
         (new User)->down();
+        (new Category)->down();
     }
 }

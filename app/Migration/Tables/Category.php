@@ -6,7 +6,7 @@ use App\Migration\TableContract;
 use illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Schema\Blueprint;
 
-class User implements TableContract
+class Category implements TableContract
 {
     /**
      * Run Migration
@@ -15,13 +15,11 @@ class User implements TableContract
      */
     public function up()
     {
-        Manager::schema()->dropIfExists('users');
-        Manager::schema()->create('users', function (Blueprint $table) {
+        Manager::schema()->dropIfExists('categories');
+        Manager::schema()->create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('username')->unique();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('name')->unique();
+            $table->string('slug');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -34,6 +32,6 @@ class User implements TableContract
      */
     public function down()
     {
-        Manager::schema()->dropIfExists('users');
+        Manager::schema()->dropIfExists('categories');
     }
 }

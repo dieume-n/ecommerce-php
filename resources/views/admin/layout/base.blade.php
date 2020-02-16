@@ -38,7 +38,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <span class="ml-3 brand-text font-weight-light">AdminLTE 3</span>
+                <span class="ml-3 brand-text font-weight-light">Ecommerce</span>
             </a>
 
             <!-- Sidebar -->

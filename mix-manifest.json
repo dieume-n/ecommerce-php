@@ -1,4 +1,9 @@
 {
+    "/public/js/adminlte.js": "/public/js/adminlte.js",
     "/public/js/app.js": "/public/js/app.js",
-    "/public/css/app.css": "/public/css/app.css"
+    "/public/css/adminlte.css": "/public/css/adminlte.css",
+    "/public/css/fontawesome.css": "/public/css/fontawesome.css",
+    "/public/css/app.css": "/public/css/app.css",
+    "/public/js/bootstrap.js": "/public/js/bootstrap.js",
+    "/public/js/jquery.js": "/public/js/jquery.js"
 }

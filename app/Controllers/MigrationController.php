@@ -4,10 +4,15 @@ namespace App\Controllers;
 
 use App\Migration\Migration;
 
-class MigrationController
+class MigrationController extends Controller
 {
-    public function run()
+    public function up()
     {
         (new Migration)->up();
+    }
+
+    public function down()
+    {
+        (new Migration)->down();
     }
 }

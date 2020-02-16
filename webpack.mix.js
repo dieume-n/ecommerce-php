@@ -12,7 +12,18 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/adminlte.js', 'public/js')
+    .js('resources/js/jquery.js', 'public/js')
+    .js('resources/js/bootstrap.js', 'public/js')
+    .sass('resources/sass/adminlte.scss', 'public/css')
+    .sass('resources/sass/fontawesome.scss', 'public/css')
     .sass('resources/sass/app.scss', 'public/css');
+
+// mix.autoload({
+//     jQuery: 'jquery',
+//     $: 'jquery',
+//     jquery: 'jquery'
+// });
 
 // Full API
 // mix.js(src, output);

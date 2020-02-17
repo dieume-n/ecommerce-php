@@ -9,4 +9,9 @@ class Category extends Model
 {
     use SoftDeletes;
     protected $fillable = ['name', 'slug'];
+
+    public function setSlugAttribute($name)
+    {
+        return $this->attributes['slug'] = slugify($name);
+    }
 }

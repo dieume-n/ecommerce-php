@@ -39,7 +39,7 @@
             </ul>
         </li>
         <li class="nav-item">
-            <a href="/admin" class="nav-link">
+            <a href="/admin/categories" class="nav-link">
                 <i class="nav-icon fas fa-compress"></i>
                 <p>Category</p>
             </a>

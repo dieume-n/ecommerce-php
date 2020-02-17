@@ -10,3 +10,8 @@ function view($path, $data = [])
     $blade = new Blade($view, $cache);
     echo $blade->view()->make($path, $data)->render();
 }
+
+function slugify($string)
+{
+    return strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $string), '-'));
+}

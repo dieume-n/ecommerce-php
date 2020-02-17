@@ -15,6 +15,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/css/fontawesome.css">
     <!-- Theme style -->
+    @yield('css')
     <link rel="stylesheet" href="/css/adminlte.css">
     <link rel="stylesheet" href="/css/app.css">
 </head>
@@ -45,9 +46,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <!-- <div class="image">
+                    <div class="image">
                         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                    </div> -->
+                    </div>
                     <div class="info">
                         <a href="#" class="d-block">Alexander Pierce</a>
                     </div>
@@ -66,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Starter Page</h1>
+                            <h1 class="m-0 text-dark">@yield('page_title')</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -102,6 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Bootstrap 4 -->
     <script src="/js/bootstrap.js"></script>
     <!-- AdminLTE App -->
+    @yield('scripts')
     <script src="/js/adminlte.js"></script>
     <script src="/js/app.js"></script>
 </body>

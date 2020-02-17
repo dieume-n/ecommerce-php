@@ -11,15 +11,15 @@
         </whitelist>
     </filter>
     <php>
-        <env name="APP_ENV" value="testing"/>
-        <env name="DB_CONNECTION" value="sqlite"/>
-        <env name="DB_HOST" value="127.0.0.1"/>
-        <env name="DB_DATABASE" value=":memory:"/>
-        <env name="SESSION_DRIVER" value="array"/>
-        <env name="COOKIE_DRIVER" value="array"/>
-        <env name="MAIL_DRIVER" value="test"/>
-        <server name="HTTP_HOST" value="127.0.0.1"/>
-        <server name="SERVER_NAME" value="localhost"/>
+        <env name="APP_ENV" value="testing" force="true"/>
+        <env name="DB_DRIVER" value="sqlite" force="true"/>
+        <env name="DB_HOST" value="127.0.0.1" force="true"/>
+        <env name="DB_DATABASE" value=":memory:" force="true"/>
+        <env name="SESSION_DRIVER" value="array" force="true"/>
+        <env name="COOKIE_DRIVER" value="array" force="true"/>
+        <env name="MAIL_DRIVER" value="test" force="true"/>
+        <server name="HTTP_HOST" value="127.0.0.1" force="true"/>
+        <server name="SERVER_NAME" value="localhost" force="true"/>
     </php>
 
 </phpunit>

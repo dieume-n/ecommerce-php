@@ -6,12 +6,13 @@ $router->map('GET', '/', 'HomeController@index', 'home');
 $router->map('GET', '/about', 'HomeController@about', 'about us');
 $router->map('GET', '/admin', 'Admin\DashboardController@index', 'admin dashboard');
 
-$router->map('GET', '/admin/products/categories/create', 'Admin\ProductCategoryController@create', 'product_category');
+$router->map('GET', '/admin/categories/create', 'Admin\CategoryController@create', 'product_category');
+$router->map('GET', '/admin/categories', 'Admin\CategoryController@index', 'list_category');
 $router->map(
     'POST',
-    '/admin/products/categories',
-    'Admin\ProductCategoryController@store',
-    'create_product_category'
+    '/admin/categories',
+    'Admin\CategoryController@store',
+    'create_category'
 );
 
 $router->map('GET', '/migrate/up', "MigrationController@up", 'create tables');

@@ -1,9 +1,12 @@
 {
     "/public/js/adminlte.js": "/public/js/adminlte.js",
     "/public/js/app.js": "/public/js/app.js",
+    "/public/css/datatables.css": "/public/css/datatables.css",
     "/public/css/adminlte.css": "/public/css/adminlte.css",
     "/public/css/fontawesome.css": "/public/css/fontawesome.css",
     "/public/css/app.css": "/public/css/app.css",
     "/public/js/bootstrap.js": "/public/js/bootstrap.js",
-    "/public/js/jquery.js": "/public/js/jquery.js"
+    "/public/js/bootstrap-datatable.js": "/public/js/bootstrap-datatable.js",
+    "/public/js/jquery.js": "/public/js/jquery.js",
+    "/public/js/jquery-datatable.js": "/public/js/jquery-datatable.js"
 }

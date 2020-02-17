@@ -1,5 +1,6 @@
 <?php
 
+use App\Utilities\Session\SessionManager;
 use Philo\Blade\Blade;
 
 function view($path, $data = [])

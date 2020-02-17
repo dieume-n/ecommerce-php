@@ -29,7 +29,7 @@ class Request
     public static function get($key)
     {
         $object = new static;
-        $request = $object->all(true);
+        $request = $object->all();
         return $request->$key;
     }
 

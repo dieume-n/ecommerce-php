@@ -95,13 +95,20 @@
 
 $(function () {
   $("#example1").DataTable();
-  $('#example2').DataTable({
-    "paging": true,
-    "lengthChange": false,
-    "searching": false,
-    "ordering": true,
-    "info": true,
-    "autoWidth": false
+});
+var myForm = document.getElementById('form1');
+myForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  var formData = new FormData(this);
+  fetch('/admin/categories', {
+    method: 'post',
+    body: formData
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    return console.log(data);
+  })["catch"](function (error) {
+    return console.log(error);
   });
 });
 

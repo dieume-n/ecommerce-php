@@ -81,7 +81,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="/admin/categories" method="post">
+                <form method="post" id="form1">
                     <div class="form-group">
                         <label for="name">Category Name</label>
                         <input type="text" class="form-control" name="name" required>

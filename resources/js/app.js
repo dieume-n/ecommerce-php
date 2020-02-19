@@ -1,11 +1,16 @@
 $(function () {
     $("#example1").DataTable();
-    $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-    });
+
 });
+
+const myForm = document.getElementById('form1');
+myForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch('/admin/categories', {
+        method: 'post',
+        body: formData
+    }).then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error));
+})

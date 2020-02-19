@@ -29,7 +29,7 @@ class RequestValidator
     protected static function unique($column, $value, $policy)
     {
         if ($value != null && !empty($value)) {
-            return !Capsule::table($policy)->where($column, '=', $value)->exists();
+            return !Capsule::table($policy)->where($column, '=', ucfirst($value))->exists();
         }
         return true;
     }

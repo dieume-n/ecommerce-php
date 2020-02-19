@@ -58,4 +58,39 @@ class CategoryController extends Controller
             throw new Exception('Token mismatch');
         }
     }
+
+    public function update($id)
+    {
+        if (Request::has('post')) {
+            $request = Request::get('post');
+
+            if (CSRFToken::verifyCSRFToken($request->token, false)) {
+                $rules = [
+                    'name' => ['required' => true, 'string' => true, 'maxLength' => 20, 'unique' => 'categories']
+                ];
+                $validate  = new RequestValidator;
+                $validate->abide((array) $request, $rules);
+
+                if ($validate->hasError()) {
+                    $errors = [];
+                    foreach ($validate->getErrorMessages() as $key => $value) {
+                        if (is_array($value)) {
+                            $errors[$key] = $value[0];
+                        }
+                    }
+                    header('Content-Type: application/json');
+                    header('HTTP/1.1 422 Unprocessable Entity', true, 422);
+                    echo json_encode(['status' => 422, 'errors' => $errors]);
+                    exit;
+                }
+                Category::where('id', $id)->update(['name' => $request->name, 'slug' => slugify($request->name)]);
+                header('Content-Type: application/json');
+                header('HTTP/1.1 200 Resource created', true, 200);
+                $response = ['message' => 'Record updated', 'status' => 200];
+                echo json_encode($response);
+                exit;
+            }
+            throw new Exception('Token mismatch');
+        }
+    }
 }

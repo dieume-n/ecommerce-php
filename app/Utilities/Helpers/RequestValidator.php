@@ -8,7 +8,7 @@ class RequestValidator
 {
     private static $error = [];
     private static $error_messages = [
-        'string' => 'The :attribute field cannot contain numbers',
+        'string' => 'The :attribute field cannot contain numbers or special characters',
         'required' => 'The :attribute field cannot be empty',
         'minLength' => 'The :attribute field must be a minimum of :policy characters',
         'maxLength' => 'The :attribute field must be a maximum of :policy characters',

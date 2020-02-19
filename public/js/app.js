@@ -3150,37 +3150,66 @@ $(function () {
   $("#example1").DataTable({
     ordering: false
   });
-});
-var myForm = document.getElementById('form1');
-myForm.addEventListener('submit', function (e) {
-  e.preventDefault();
-  var name = $('#category-name').val();
-  var token = $('#category-token').val();
-  var formData = new FormData();
-  formData.append('name', name);
-  formData.append('token', token);
-  fetch('/admin/categories', {
-    method: 'post',
-    body: formData
-  }).then(function (res) {
-    return res.json();
-  }).then(function (data) {
-    if (data.status === 422) {
-      var name_category = document.getElementById('category-name');
-      name_category.classList.add('is-invalid');
-      var error_message = document.getElementById('error-message');
-      error_message.innerHTML = data.errors.name;
-    } else {
-      $('#hide-modal').click();
-      sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
-        icon: 'success',
-        title: 'category created'
-      }).then(function () {
-        location.reload();
-      });
-    }
-  })["catch"](function (error, data) {
-    console.log(error);
+  $('.update-category').on('click', function (e) {
+    e.preventDefault();
+    var token = $(this).data('token');
+    var id = $(this).attr('id');
+    var name = $('#category-' + id).val();
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('token', token);
+    fetch('/admin/categories/' + id + '/edit', {
+      method: 'post',
+      body: formData
+    }).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      if (data.status === 422) {
+        var name_category = document.getElementById('category-' + id);
+        name_category.classList.add('is-invalid');
+        var error_message = document.getElementById('error-' + id);
+        error_message.innerHTML = data.errors.name;
+      } else {
+        $('#hide-edit-' + id).click();
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          icon: 'success',
+          title: 'category Updated'
+        }).then(function () {
+          location.reload();
+        });
+      }
+    })["catch"](function (error) {
+      return console.error(error);
+    });
+  });
+  $('.create-category').on('click', function (e) {
+    e.preventDefault();
+    var token = $(this).data('token');
+    var name = $('#category-name').val();
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('token', token);
+    fetch('/admin/categories', {
+      method: 'post',
+      body: formData
+    }).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      if (data.status === 422) {
+        var name_category = document.getElementById('category-name');
+        name_category.classList.add('is-invalid');
+        var error_message = document.getElementById('error-message');
+        error_message.innerHTML = data.errors.name;
+      } else {
+        $('#hide-modal').click();
+        sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+          icon: 'success',
+          title: 'category Created'
+        }).then(function () {
+          location.reload();
+        });
+      }
+    });
   });
 });
 

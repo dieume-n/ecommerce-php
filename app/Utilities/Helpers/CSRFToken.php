@@ -27,10 +27,13 @@ class CSRFToken
      * @param string $token
      * @return bool
      */
-    public static function verifyCSRFToken($token)
+    public static function verifyCSRFToken($token, $regenearte = true)
     {
         if (SessionManager::has('token') && SessionManager::get('token') === $token) {
-            SessionManager::remove('token');
+            if ($regenearte) {
+                SessionManager::remove('token');
+            }
+
             return true;
         }
         return false;

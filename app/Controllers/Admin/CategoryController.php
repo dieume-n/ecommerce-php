@@ -16,7 +16,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::all()->sortByDesc('created_at');
         return view('admin.category.index', compact('categories'));
     }
 
@@ -25,8 +25,7 @@ class CategoryController extends Controller
         if (Request::has('post')) {
             $request = Request::get('post');
 
-
-            if (CSRFToken::verifyCSRFToken($request->token)) {
+            if (CSRFToken::verifyCSRFToken($request->token, false)) {
                 $rules = [
                     'name' => ['required' => true, 'string' => true, 'maxLength' => 20, 'unique' => 'categories']
                 ];
@@ -41,8 +40,8 @@ class CategoryController extends Controller
                         }
                     }
                     header('Content-Type: application/json');
-                    http_response_code(400);
-                    echo json_encode($errors);
+                    header('HTTP/1.1 422 Unprocessable Entity', true, 422);
+                    echo json_encode(['status' => 422, 'errors' => $errors]);
                     exit;
                 }
 
@@ -50,7 +49,11 @@ class CategoryController extends Controller
                     'name' => ucfirst($request->name),
                     "slug" => slugify($request->name)
                 ]);
-                return json_encode(['message' => 'sucess']);
+                header('Content-Type: application/json');
+                header('HTTP/1.1 201 Resource created', true, 201);
+                $response = ['message' => 'success', 'status' => 201];
+                echo json_encode($response);
+                exit;
             }
             throw new Exception('Token mismatch');
         }

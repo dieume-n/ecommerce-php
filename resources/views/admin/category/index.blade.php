@@ -50,10 +50,43 @@
                                 <td>{{ $category->slug }}</td>
                                 <td>{{ $category->created_at->toFormattedDateString() }}</td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-info btn-sm">
+                                    <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit-category">
                                         <i class="fas fa-pencil-alt"></i>
                                         Edit
                                     </a>
+                                    <div class="modal fade" id="edit-category">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Edit Category</h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="hide-edit">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="post" id="form1" name="update-category">
+                                                        <div class="form-group">
+                                                            <label for="name">Category Name</label>
+                                                            <input type="text" class="form-control" name="name" id="category-name" value="{{ $category->name }}">
+                                                            <span class="invalid-feedback" id="error-message"></span>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="hidden" class="form-control" name="token" id="category-token" value="{{ App\Utilities\Helpers\CSRFToken::token() }}">
+                                                        </div>
+
+                                                        <div class="modal-footer justify-content-between">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success">Save changes</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
+
                                     <a href="" class="ml-3 btn btn-danger btn-sm">
                                         <i class="fas fa-trash"></i>
                                         Delete
@@ -76,23 +109,24 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">New Category</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="hide-modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" id="form1">
+                <form method="post" id="form1" name="new-category">
                     <div class="form-group">
                         <label for="name">Category Name</label>
-                        <input type="text" class="form-control" name="name" required>
+                        <input type="text" class="form-control" name="name" id="category-name">
+                        <span class="invalid-feedback" id="error-message"></span>
                     </div>
                     <div class="form-group">
-                        <input type="hidden" class="form-control" name="token" value="{{ App\Utilities\Helpers\CSRFToken::token() }}">
+                        <input type="hidden" class="form-control" name="token" id="category-token" value="{{ App\Utilities\Helpers\CSRFToken::token() }}">
                     </div>
 
                     <div class="modal-footer justify-content-between">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-success">Save changes</button>
+                        <button type="submit" class="btn btn-success">Save</button>
                     </div>
                 </form>
             </div>

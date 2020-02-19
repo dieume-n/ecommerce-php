@@ -4,7 +4,8 @@
     "dependencies": {
         "admin-lte": "^3.0.2",
         "bootstrap": "^4.4.1",
-        "jquery": "^3.4.1"
+        "jquery": "^3.4.1",
+        "sweetalert2": "^9.7.2"
     },
     "scripts": {
         "dev": "npm run development",

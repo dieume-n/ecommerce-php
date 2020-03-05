@@ -20,6 +20,12 @@ $router->map(
     'Admin\CategoryController@update',
     'edit_category'
 );
+$router->map(
+    'POST',
+    '/admin/categories/[i:id]/delete',
+    'Admin\CategoryController@delete',
+    'delete_category'
+);
 
 $router->map('GET', '/migrate/up', "MigrationController@up", 'create tables');
 $router->map('GET', '/migrate/down', "MigrationController@down", 'drop tables');

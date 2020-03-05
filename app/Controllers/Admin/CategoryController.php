@@ -93,4 +93,18 @@ class CategoryController extends Controller
             throw new Exception('Token mismatch');
         }
     }
+
+    public function delete($id)
+    {
+        if (Request::has('post')) {
+            $request = Request::get('post');
+            Category::destroy($id);
+
+            header('Content-Type: application/json');
+            header('HTTP/1.1 200 Resource created', true, 200);
+            $response = ['message' => 'Record deleted', 'status' => 200];
+            echo json_encode($response);
+            exit;
+        }
+    }
 }

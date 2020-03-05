@@ -65,4 +65,35 @@ $(function () {
 
             })
     });
+    $('.delete-category').on('click', function (e) {
+        e.preventDefault();
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.value) {
+                let id = $(this).data('categoryid');
+                const formData = new FormData();
+                formData.append('category_id', id);
+                fetch('/admin/categories/' + id + '/delete', {
+                    method: 'post',
+                    body: formData
+                }).then(res => res.json())
+                    .then(data => {
+                        if (data.status === 200) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Category has been deleted',
+                                'success'
+                            ).then(() => location.reload());
+                        }
+                    })
+            }
+        });
+    });
 });

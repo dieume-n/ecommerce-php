@@ -3211,6 +3211,38 @@ $(function () {
       }
     });
   });
+  $('.delete-category').on('click', function (e) {
+    var _this = this;
+
+    e.preventDefault();
+    sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then(function (result) {
+      if (result.value) {
+        var id = $(_this).data('categoryid');
+        var formData = new FormData();
+        formData.append('category_id', id);
+        fetch('/admin/categories/' + id + '/delete', {
+          method: 'post',
+          body: formData
+        }).then(function (res) {
+          return res.json();
+        }).then(function (data) {
+          if (data.status === 200) {
+            sweetalert2__WEBPACK_IMPORTED_MODULE_0___default.a.fire('Deleted!', 'Category has been deleted', 'success').then(function () {
+              return location.reload();
+            });
+          }
+        });
+      }
+    });
+  });
 });
 
 /***/ }),

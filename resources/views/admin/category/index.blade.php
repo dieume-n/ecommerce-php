@@ -84,7 +84,7 @@
                                         <!-- /.modal-dialog -->
                                     </div>
 
-                                    <a href="" class="ml-3 btn btn-danger btn-sm">
+                                    <a href="" class="ml-3 btn btn-danger btn-sm delete-category" data-categoryid="{{$category->id}}">
                                         <i class="fas fa-trash"></i>
                                         Delete
                                     </a>

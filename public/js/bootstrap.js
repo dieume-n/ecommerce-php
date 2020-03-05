@@ -17890,7 +17890,7 @@ __webpack_require__(/*! ../../node_modules/bootstrap/dist/js/bootstrap.bundle.js
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\js\bootstrap.js */"./resources/js/bootstrap.js");
+module.exports = __webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\js\bootstrap.js */"./resources/js/bootstrap.js");
 
 
 /***/ })

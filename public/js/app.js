@@ -3266,11 +3266,11 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\sass\datatables.scss */"./resources/sass/datatables.scss");
-__webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\sass\adminlte.scss */"./resources/sass/adminlte.scss");
-__webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\sass\fontawesome.scss */"./resources/sass/fontawesome.scss");
-module.exports = __webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\sass\datatables.scss */"./resources/sass/datatables.scss");
+__webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\sass\adminlte.scss */"./resources/sass/adminlte.scss");
+__webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\sass\fontawesome.scss */"./resources/sass/fontawesome.scss");
+module.exports = __webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

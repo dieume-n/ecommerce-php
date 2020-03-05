@@ -1953,7 +1953,7 @@ __webpack_require__(/*! ../../node_modules/admin-lte/dist/js/adminlte.js */ "./n
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\js\adminlte.js */"./resources/js/adminlte.js");
+module.exports = __webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\js\adminlte.js */"./resources/js/adminlte.js");
 
 
 /***/ })

@@ -10746,7 +10746,7 @@ module.exports = g;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\js\jquery.js */"./resources/js/jquery.js");
+module.exports = __webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\js\jquery.js */"./resources/js/jquery.js");
 
 
 /***/ })

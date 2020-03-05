@@ -26223,7 +26223,7 @@ window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\js\bootstrap-datatable.js */"./resources/js/bootstrap-datatable.js");
+module.exports = __webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\js\bootstrap-datatable.js */"./resources/js/bootstrap-datatable.js");
 
 
 /***/ })

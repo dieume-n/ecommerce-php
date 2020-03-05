@@ -26047,7 +26047,7 @@ window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Sandbox\Projects\PHP-Ecommerce\resources\js\jquery-datatable.js */"./resources/js/jquery-datatable.js");
+module.exports = __webpack_require__(/*! C:\Wamp.NET\sites\ecommerce-php\resources\js\jquery-datatable.js */"./resources/js/jquery-datatable.js");
 
 
 /***/ })
